@@ -42,6 +42,8 @@ if(mil != null || mil != ''){
         upDate();
     }, 1000);
 
+} else {
+    resetDate();
 }
 
 // calculating function
@@ -90,3 +92,17 @@ function disWarn(){
     altt.classList.add('alt-warn');
 }
 
+
+// set default date
+let dateTime = new Date();
+/*
+    Date format:  YYYY-MM-DD
+    Time format:  HH:MM
+*/
+dateData[0].value = dateTime.getFullYear() + '-' + formatDate((dateTime.getMonth() + 1).toString(10)) + '-' + formatDate((dateTime.getDate()).toString(10));
+dateData[1].value = dateTime.getHours() + ':' + dateTime.getMinutes();
+
+function formatDate(val){
+    if(val.length == 1) return '0' + val;
+    return val;
+}

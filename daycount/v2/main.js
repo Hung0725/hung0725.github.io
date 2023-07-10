@@ -15,7 +15,7 @@ var dateData = document.getElementsByClassName('dt');
 // set custom date
 function setDate(){
     if(!checkDate()){
-        alt('Invalid Date!', 'bg-warning')
+        alt('Invalid Date!', 'yel')
         return;
     }
 
@@ -145,12 +145,11 @@ function alt(text, BSTbg){
     var altEl = document.createElement('div');
     altEl.innerHTML = text;
     if(BSTbg != '') altEl.classList.add(BSTbg);
-    altEl.classList.add('text-white');
     document.getElementsByClassName('alert-list')[0].appendChild(altEl)
 
     setTimeout(function(){
         altEl.style.display = 'none';
-    }, 3000)
+    }, 5000)
 
    
 }

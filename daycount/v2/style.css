@@ -98,11 +98,14 @@
 .alert-list div{
   padding:8px 10px;
   margin-bottom:10px;
-  background:rgba(255,255,255,.95);
   border-radius:5px;
   font-size:15px;
   border-radius:10px;
   opacity:1;
+}
+.yel{
+  background: rgba(255, 255, 65, .5);
+  color:rgba(166, 124, 0, 1);
 }
 .ct{
   font-weight:normal;
@@ -112,8 +115,6 @@
   font-weight:normal;
   opacity:0.6;
 }
-
-
 
 @media (min-width:576px){
   .col-sm-5{

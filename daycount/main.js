@@ -2,27 +2,27 @@ var d = 0, h = 0, m = 0, s = 0;
 var clock = document.getElementsByClassName('clock')[0];
 
 
+// reset to now date
 function resetDate(){
     localStorage.setItem('milsec', Date.now());
     mil = Date.now();
 
     clock.innerHTML = '0 Day 0:0:0s';
-
 }
 
 var dateData = document.getElementsByClassName('dt');
 
+// set custom date
 function setDate(){
     localStorage.setItem('milsec', (Date.parse(dateData[0].value + 'T' + dateData[1].value + ':00')));
     mil = localStorage.getItem('milsec');
     console.log(mil);
     calc();
     upDate();
-    
 }
 
 
-
+//  calculate and set interval if there is data in localStorage
 var mil = localStorage.getItem('milsec');
 console.log(mil);
 if(mil != null || mil != ''){
@@ -37,7 +37,6 @@ if(mil != null || mil != ''){
      upDate();
 
      setInterval(function(){
-        
         milRange = Date.now() - mil;
         calc();
         upDate();
@@ -45,6 +44,7 @@ if(mil != null || mil != ''){
 
 }
 
+// calculating function
 function calc(){
      s = Math.round(milRange / 1000);
 
@@ -58,14 +58,17 @@ function calc(){
      h %= 24;
 }
 
+// update caculated duration
 function upDate(){
     clock.innerHTML = '<b class = "h2 fw-bolder b">' + d + " Day " + '</b>' + h + ':' + m + ':' + s + 's'
 }
+
 
 var area = document.getElementById('note');
 var warn = document.getElementById('warn');
 var altt = document.getElementsByClassName('altt')[0];
 
+//save text to localStorage
 function saveText(){
     localStorage.setItem('note', area.value);
     warn.style.display = 'none';

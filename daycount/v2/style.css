@@ -87,7 +87,7 @@
   width:220px;
   display:flex;
   flex-direction:column-reverse;
-  max-height:140px;
+  max-height:145px;
   overflow:hidden;
   /* -webkit-backdrop-filter:blur(15px);
   backdrop-filter:blur(15px); */

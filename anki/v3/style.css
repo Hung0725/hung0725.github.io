@@ -472,7 +472,7 @@ button.custom-select-btn.dark:before{
     width:30px;
     display:flex;
     align-items:Center;
-    top:calc(50% - 12px);
+    top:calc(50% - 15px);
     right:5px;
     transition:transform 500ms, top 500ms;
     background:white;

@@ -34,7 +34,8 @@ var monthInf = document.getElementById('monthInf');
 
 
 var dataStorage = localStorage.getItem('cld');
-var datesData = dataStorage.split('+');
+var datesData = [];
+if(dataStorage != null) datesData = dataStorage.split('+');
 
 var datenow = dateInf.getFullYear().toString(10) + formatDate(dateInf.getMonth() + 1) + formatDate(dateInf.getDate());
 
@@ -71,7 +72,7 @@ function getCalendar(month, year){
     for(var i = d.getDay(); i < new Date(year, month, 0).getDate() + d.getDay(); i++){
         dates[i].innerHTML = date;
 
-        if(date == dateInf.getDate() && month == dateInf.getMonth() + 1){
+        if(date == dateInf.getDate() && month == dateInf.getMonth() + 1 && year == dateInf.getFullYear()){
             dates[i].classList.add('currentDate');
         }
         dates[i].classList.add('mouseover');
@@ -173,7 +174,9 @@ function sendEmo(){
         }
     }
     // save to locaLStorage
-    localStorage.setItem('cld', dataStorage + '+' + dateInf.getFullYear().toString(10) + formatDate(dateInf.getMonth() + 1) + formatDate(dateInf.getDate()) + '/' + emos + '/' + comment.value);
+    if(dataStorage != null) localStorage.setItem('cld', dataStorage + '+' + dateInf.getFullYear().toString(10) + formatDate(dateInf.getMonth() + 1) + formatDate(dateInf.getDate()) + '/' + emos + '/' + comment.value);
+    else localStorage.setItem('cld', dateInf.getFullYear().toString(10) + formatDate(dateInf.getMonth() + 1) + formatDate(dateInf.getDate()) + '/' + emos + '/' + comment.value);
+    
     alt("We saved your feeling today! come here tomorrow to write your feeling here!")
 }
 

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name = 'viewport' content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'>
+    <link rel = 'stylesheet' href = 'style.css'>
+    <meta charset="UTF-8">
+    <title>H U N G</title>
+    <link rel = 'icon' type = 'image/x-icon' href = 'https://cdn-icons-png.flaticon.com/512/1869/1869397.png'>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+
+    <link id = 'style-code' rel="stylesheet"href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+<body>
+    <!-- <input type = 'file' id = 'image-inp' accept = 'image/*'> 
+
+    <img src = '' id = 'image'> -->
+
+    <div class = 'calendar'>
+        <div class = 'header'>
+            <div>
+                <button onclick = 'calc(0)'>
+                    <span class = 'material-symbols-outlined'>
+                        arrow_back_ios
+                    </span>
+                </button>
+            </div>
+            <div id = 'monthInf'>
+                
+            </div>
+            <div>
+                <button onclick = 'calc(1)'>
+                    <span class = 'material-symbols-outlined'>
+                        arrow_forward_ios
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div>
+            <div class = 'week'>
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class = 'day'>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class = 'emotion'>
+        <p class = 'h3'>How is your day today?</p>
+
+        <div class="emotion-icon">
+            <label>
+            <input name = 'emo' class = 'emo' type = 'radio'>
+            <div title="Drained" data-bs-toggle="tooltip">
+                <span class="material-symbols-outlined">
+                    sentiment_very_dissatisfied
+                </span>
+            </div>
+            </label>
+
+            <label>
+            <input name = 'emo' class = 'emo' type = 'radio'>
+            <div title="Sad" data-bs-toggle="tooltip">
+                <span class="material-symbols-outlined">
+                    mood_bad
+                </span>
+            </div>
+            </label>
+
+            <label>
+            <input name = 'emo' class = 'emo' type = 'radio'>
+            <div title="Normal" data-bs-toggle="tooltip">
+                <span class="material-symbols-outlined">
+                    sentiment_satisfied
+                </span>
+            </div>
+            </label>
+
+            <label>
+            <input name = 'emo' class = 'emo' type = 'radio'>
+            <div title="Happy" data-bs-toggle="tooltip">
+                <span class="material-symbols-outlined">
+                    mood
+                </span>
+            </div>
+            </label>
+
+            <label>
+            <input name = 'emo' class = 'emo' type = 'radio'>
+            <div title="Positive" data-bs-toggle="tooltip">
+                <span class="material-symbols-outlined">
+                    sentiment_very_satisfied
+                </span>
+            </div>
+            </label>
+        </div>
+        <div class = 'cmt'>
+            <textarea spellcheck = 'false'id = 'comment' placeholder = 'Write your comment here ..'></textarea>
+        </div>
+
+        <div>
+            <button class = 'submit-emo' onclick = 'sendEmo()'>Send</button>
+        </div>
+    </div>
+
+    <div class = 'cmtSection'>
+        <div class = 'cmt-header'>
+            <span class = 'title'>Jul 22 2023</span>
+            <button onclick = 'this.parentElement.parentElement.style.bottom = "-" + this.parentElement.parentElement.offsetHeight + "px"'>
+                <span class = 'material-symbols-outlined'>close</span>
+            </button>
+        </div>
+        <div class = 'cmt-cnt'>
+            hung is my name
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src = 'main.js'></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+</body>
+</html>

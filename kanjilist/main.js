@@ -36,6 +36,8 @@ function addKanji(){
     document.getElementsByClassName('N' + (5 - JLPT.value))[0].appendChild(x);
     listKanji[JLPT.value] += kanji.value;
     localStorage.setItem("file", listKanji[0] +'/'+ listKanji[1] +'/'+ listKanji[2] +'/'+ listKanji[3] +'/'+ listKanji[4]);
+    kanji.value = '';
+
 }
 
 function getLocal(){

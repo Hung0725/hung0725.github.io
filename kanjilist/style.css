@@ -146,6 +146,9 @@
     border-radius:10px;
     text-decoration:none;
     color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 .list div div a.highlight{
     animation:hl 7s ease-in-out;

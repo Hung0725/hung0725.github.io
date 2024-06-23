@@ -1,5 +1,6 @@
 :root{
     --blue:rgb(53, 161, 185);
+    --yellow:rgb(232, 212, 78);
 }
 *{
     padding:0;
@@ -117,6 +118,7 @@
 }
 .list-heading{
     margin:10px 0;
+    width:100%;
     background:#f1f1f1;
     padding:5px 0;
     text-align:center;
@@ -126,14 +128,41 @@
     margin-bottom:500px;
 }
 .list div{
+    display:flex;
+    flex-wrap:wrap;
+}
+.list div div{
     text-align:center;
+    display:flex;
+    flex-wrap:wrap;
+    padding:0 20px;
 }
 .list div a{
+    width:50px;
+    height:50px;
     padding:9px;
-    margin:5px 0;
     cursor:pointer;
     font-size:18px;
     border-radius:10px;
+    text-decoration:none;
+    color:black;
+}
+.list div div a.highlight{
+    animation:hl 7s ease-in-out;
+}
+@keyframes hl{
+    0%{
+        background:transparent;
+    }
+    5%{
+        background:var(--yellow);
+    }
+    90%{
+        background:var(--yellow);
+    }
+    100%{
+        background:transparent;
+    }
 }
 .list div a:hover{
     background:rgba(0,0,0,.1);
@@ -142,12 +171,14 @@
     display:flex;
     justify-content:center;
     margin-bottom:20px;
+    align-items:center;
 }
 .file button{
     border:none;
     padding:10px;
     margin:0 5px;
     border-radius:10px;
+    max-height:44px;
 }
 .file button:hover{
     opacity:0.9;
@@ -161,6 +192,8 @@
     font-size:14px;
     text-align:center;
     padding:10px;
+    display:block;
+    width:100%;
 }
 .footer{
     background:rgb(52, 52, 52);

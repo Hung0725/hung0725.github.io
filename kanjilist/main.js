@@ -21,6 +21,16 @@ function check(){
     }
     if(localStorage.getItem('file')) if(localStorage.getItem('file').indexOf(kanji.value) != -1) {
         alt("You have added this kanji before! Please choose another kanji!");
+        var kj = localStorage.getItem('file').split('/');
+        for(var i = 0; i < 5; i++){
+            if(kj[i].indexOf(kanji.value) != -1){
+                var el = document.querySelectorAll('.list div .N' + (5-i) + ' a')[kj[i].indexOf(kanji.value)];
+                el.classList.add("highlight");
+                setTimeout(() => {
+                    el.classList.remove('highlight');
+                }, 7000);
+            }
+        }
         return false;
     }
     return true;
@@ -37,7 +47,6 @@ function addKanji(){
     listKanji[JLPT.value] += kanji.value;
     localStorage.setItem("file", listKanji[0] +'/'+ listKanji[1] +'/'+ listKanji[2] +'/'+ listKanji[3] +'/'+ listKanji[4]);
     kanji.value = '';
-
 }
 
 function getLocal(){

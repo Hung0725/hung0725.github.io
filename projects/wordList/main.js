@@ -27,10 +27,35 @@ wordInp.addEventListener('keyup', function(e){
 meanInp.addEventListener('keyup', function(e){
     if(e.keyCode == 13) tgSel();
 });
+
+function notify(text){
+    var x = document.createElement('div');
+    x.innerHTML = text;
+    x.classList.add('notify');
+    document.body.appendChild(x);
+    setTimeout(() => {
+        document.body.removeChild(x);
+    }, 5000) 
+}
+function check(val){
+    var words = document.querySelectorAll('.table-list tr td:nth-child(' +2 +')');
+    for(var i = 0; i < words.length; i++){
+        if(words[i].innerText == val){
+            notify("You have added this word before!" + ' #' + (i + 1));
+            return false;
+        }
+    } 
+}
+
+
 var od = 0;
 function addWord(){
-    if(wordInp.value == '' || meanInp.value == '') return;
-
+    
+    if(wordInp.value == '' || meanInp.value == ''){
+        notify('Input field(s) missing!')
+        return;
+    }
+    if(check(wordInp.value)) return;
     var x = document.createElement('tr'),
         stt = document.createElement('td'),
         word = document.createElement('td'),
@@ -149,4 +174,20 @@ hid.onchange = function(){
     for(var i =0; i < words.length; i++){
             words[i].classList.toggle('hidden');
     }
+}
+
+var date = new Date();
+function formatNum(num){
+    if(num < 10){
+        return '0' + num;
+    }
+    return num;
+}
+function filename(){
+    var y = date.getFullYear();
+    var m = formatNum(date.getMonth());
+    var d = formatNum(date.getDate());
+    var h = formatNum(date.getHours());
+    var min = formatNum(date.getMinutes());
+    return 'wordList' + y + m + d + h + m;
 }

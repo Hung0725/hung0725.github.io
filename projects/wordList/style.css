@@ -1,0 +1,148 @@
+*{
+    padding:0;
+    margin:0;
+}
+.input, .search, .head, .filesaver, .feat{
+user-select:none;
+}
+:root{
+    --blue:#2596be;
+}
+.btn{
+    border-radius:0;
+}
+/* .form-control:focus{
+    outline:5px solid var(--blue);
+} */
+.input{
+    padding:20px 30px;
+}
+.select-menu{
+    display:grid;
+    position:absolute;
+    width:90px;
+    right:84.4px;
+    height:0;
+    overflow:hidden;
+    transition:all 0.3s ease-in-out;
+    border:1px solid gray;
+    box-shadow:2px 2px 5px rgba(0,0,0,.1);
+    z-index:100;
+    opacity:0;
+}
+.expand{
+    height:120px;
+    opacity:1;
+}
+.select-menu button{
+    border:none;
+    width:90px;
+    background:white;
+}
+.select-menu button:hover{
+    background:var(--blue);
+    color:white;
+}
+
+.search{
+    padding:20px 30px;
+}
+.input, .search{
+    max-width:500px;
+}
+.filter button{
+    border:none;
+    padding:5px;
+    border-radius:10px;
+    margin:5px;
+}
+.filter button:hover{
+    background:#ddd;
+}
+.filter{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+}
+.bg-primary{
+    color:rgba(255,255,255,.8);
+}
+.filesave{
+    display:flex;
+    justify-content:center;
+}
+.filesave button{
+    border:none;
+    margin:10px;
+    padding:10px;
+    border-radius:5px;
+}
+.table-list td:nth-child(1){
+    color:gray;
+}
+
+
+.container{
+    width:50px;
+    height:30px;
+    background:gray;
+    border-radius:50px;
+    position:relative;
+    margin-left:10px;
+}
+.checkbox input{
+    display:none;
+}
+.container:before{
+    content:'';
+    position:absolute;
+    width:24px;
+    height:24px;
+    left:3px;
+    background:white;
+    border-radius:50px;
+    top:3px;
+    transition:all 0.3s;
+}
+.checkbox input:checked ~ .container{
+    background:var(--blue);
+}
+.checkbox input:checked ~ .container:before{
+    left:24px;
+}
+.feat{
+    display:Flex;
+    justify-content:center;
+}
+.hidden{
+    color:transparent;
+    user-select:none;
+}
+.hidden:hover{
+    animation:show 2s ease-in-out;
+}
+@keyframes show{
+    from{
+        color:black;
+    }
+    to{
+        color:transparent;
+    }
+}
+.head{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.8);
+    -webkit-backdrop-filter:blur(15px);
+    backdrop-filter:blur(15px);
+    padding:7px 0;
+}
+.footer{
+    margin-top:50px;
+    text-align:center;
+    background:rgb(70,70,70);
+    color:rgba(255,255,255,.7);
+    font-size:14px;
+    padding:5px 0;
+}

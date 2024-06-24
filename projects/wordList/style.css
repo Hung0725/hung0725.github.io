@@ -139,10 +139,38 @@ user-select:none;
     padding:7px 0;
 }
 .footer{
-    margin-top:50px;
+    margin-top:200px;
     text-align:center;
     background:rgb(70,70,70);
     color:rgba(255,255,255,.7);
     font-size:14px;
     padding:5px 0;
+}
+.notify{
+    position:fixed;
+    top:12px;
+    left:30%;
+    width:40%;
+    z-index:2000;
+    background:rgb(64, 64, 64);
+    opacity:0.95;
+    padding:10px;
+    text-align:center;
+    color:rgb(200,200,200);
+    border-radius:18px;
+    animation: send 4s ease-in-out forwards;
+}
+@keyframes send{
+    0%{
+        top:-100px;
+    }
+    10%{
+        top:12px;
+    }
+    90%{
+        top:12px;
+    }
+    100%{
+        top:-100px;
+    }
 }

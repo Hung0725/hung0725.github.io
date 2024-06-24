@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    <head>
+<title>Japanese vocab</title>
+<meta name = 'viewport' content = 'width=device-width, initial-scale=1'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel = 'stylesheet' href = 'style.css'>
+
+    </head>
+    <body>
+        <div class = 'head'>
+            <h1 style = 'text-align:center'><b>word</b><b style = 'font-weight:400'>List</b></h1>
+        </div>
+        <div style = 'display:flex; justify-content:center; flex-wrap:wrap'>
+        <div class = 'input'>
+            <div class = 'input-group inp-val'>
+                <input required id = 'word' spellcheck = 'false' autocomplete = 'off' class = 'form-control' type = 'text' placeholder = "Enter your word..">
+                <input required id = 'meaning'spellcheck = 'false' autocomplete = 'off' class= 'form-control' type = 'text' placeholder = 'meaning here..'>
+                <button onclick = 'tgSel()' class=  'select btn btn-secondary dropdown-toggle' style = 'width:90px;'>
+                    noun
+                </button>
+                <button class = 'enter btn btn-primary' onclick = 'addWord()'>
+                    Add
+                </button>
+            </div>
+            <div class = 'select-menu'>
+                <button onclick = 'sel(this.innerText)'>noun</button>
+                <button onclick = 'sel(this.innerText)'>verb</button>
+                <button onclick = 'sel(this.innerText)'>いadj</button>
+                <button onclick = 'sel(this.innerText)'>なadj</button>
+                <button onclick = 'sel(this.innerText)'>adverb</button>
+            </div>
+        </div>
+        <div class = 'search'>
+            <div class = 'input-group'>
+                <input class = 'form-control' type ='text' id = 'search' placeholder = 'Search here ..'>
+                <button class=  'btn btn-primary' onclick = 'searchFor(2, searchInp.value)'>Search</button>
+            </div>
+            <div style = 'display:flex; align-items:center'>
+            <div style = 'border:1px solid #ddd;padding:5px;'>
+                Filter: 
+            </div>
+            <div class = 'filter'>
+                <button onclick = 'searchFor(3, this.innerText); selec(0)'>noun</button>
+                <button onclick = 'searchFor(3, this.innerText); selec(1)'>verb</button>
+                <button onclick = 'searchFor(3, this.innerText); selec(2)'>いadj</button>
+                <button onclick = 'searchFor(3, this.innerText); selec(3)'>なadj</button>
+                <button onclick = 'searchFor(3, this.innerText); selec(4)'>adverb</button>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class = 'feat'>
+            Hide meaning
+            <div class = 'checkbox'>
+                <label>
+                    <input type="checkbox" id = 'hide'>
+                    <div class = 'container'>
+                        
+                    </div>
+                </label>
+            </div>
+        </div>
+<hr>
+        <div class = 'filesaver'>
+            <div class = 'text-center text-secondary'>Save and back up your data here!</div>
+                <div class = 'filesave'>
+                <button class = 'bg-primary' onclick = "download('wordList.txt')">Save txt</button>
+                <div>
+                    <input type = 'file' id = 'txt-file' style = 'display:none'>
+                    <button onclick = 'fileEl.click()'>Load txt</button>
+                </div>
+                </div>
+        </div>
+<hr>
+
+        <div class = 'list'>
+            <table class = 'table table-striped table-hover'>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Word</th>
+                        <th>PartOfSpeech</th>
+                        <th>Meaning</th>
+                    </tr>
+                </thead>
+                <tbody class = 'table-list'>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class = 'footer'>
+            published jun 24 2024; Hung
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src = 'main.js'></script>
+    </body>
+</html>

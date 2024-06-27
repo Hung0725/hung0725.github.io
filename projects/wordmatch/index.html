@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+    <head>
+<title>wM - Khanh Hung</title>
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel = 'stylesheet' href = 'style.css'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap');
+    </style>
+
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+</style>
+
+    </head>
+    <body>
+        <div class = 'main-content'>
+        <div class = 'head'><b>Word</b>Match</div>
+        <div class = 'control'>
+            <button onclick = 'startgame()'>Start</button>
+            <button onclick = 'showtable()'>Game log</button>
+            <label>
+                <input type = 'file' id = 'gcontent' hidden = 'true'>
+                <div class = 'filebtn'>
+                    Load file
+                </div>
+            </label>
+        </div>
+        <!-- game content -->
+         <div class = 'game-content'>
+            <div class = 'gcontainer'>
+                <table class = 'ws'>
+                    <thead>
+                        <th></th>
+                        <th>Word</th>
+                        <th>P</th>
+                        <th>Meaning</th>
+                    </thead>
+                    <tbody id = 'wlist'>
+
+                    </tbody>
+                </table>
+                
+            </div>
+            <div class = 'filebtns'>
+                <button onclick = 'savedata()'>Use it</button>
+                <button onclick = 'bg.classList.remove("bg"); this.parentElement.parentElement.classList.remove("showfile")'>Dismiss</button>
+            </div>
+         </div>
+
+        <div class = 'clockdiv'>
+            <div><span class = 'clock'></span></div>
+        </div>
+
+        <div class = 'statistic'>
+            <div class = 'title'>
+                Game over
+            </div>
+            <div class = 'stat-content'>
+                <div id = 'timeplayed'>Time: </div>
+                <div id = 'pairs'>Pairs matched: </div>
+                <div id = 'rights'>Right: </div>
+                <div id = 'wrong'>wrong: </div>
+                <div id = 'acc'>accuracy: </div>
+                <div>
+                    <div id = 'wrong-list'></div>
+                </div>
+                <div class = 'restart'>
+                    <button onclick = 'location.reload()'><span class="material-symbols-outlined">replay</span></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class = 'log'>
+            
+            <table class = 'table table-hover'>
+                <thead class = 'text-white'>
+                    <th><button class = 'showbtn closebtn' onclick = 'closetable()' id = 'tablebtn'><span class = 'material-symbols-outlined'>close</span></button></th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>M</th>
+                    <th>R</th>
+                    <th>W</th>
+                </thead>
+                <tbody class = 'game-log'>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <div class = 'main'>
+            <div class = 'col1'>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 1); tg(1, this.innerHTML, 0)}'></button>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 1); tg(1, this.innerHTML, 1)}'></button>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 1); tg(1, this.innerHTML, 2)}'></button>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 1); tg(1, this.innerHTML, 3)}'></button>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 1); tg(1, this.innerHTML, 4)}'></button>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 1); tg(1, this.innerHTML, 5)}'></button>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 1); tg(1, this.innerHTML, 6)}'></button>
+            </div>
+            <div class = 'col2'>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 2); tg(3, this.innerHTML, 0)}'></button>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 2); tg(3, this.innerHTML, 1)}'></button>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 2); tg(3, this.innerHTML, 2)}'></button>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 2); tg(3, this.innerHTML, 3)}'></button>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 2); tg(3, this.innerHTML, 4)}'></button>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 2); tg(3, this.innerHTML, 5)}'></button>
+                <button onclick = 'if(!this.classList.contains("choose")){choose(this, 2); tg(3, this.innerHTML, 6)}'></button>
+
+            </div>
+        </div>
+
+
+        <div>
+            <div class = 'setting'>
+                <div class = 'timeinput'>
+                    <div class = 'min'>
+                        <div class = 'tint'>2</div>
+                        <div id = 'mininp'>1</div>
+                        <div class = 'dint'>0</div>
+                    </div>
+                    <div>
+                        m
+                    </div>
+                    <div class = 'sec'>
+                        <div class = 'tint'>1</div>
+                        <div id = 'secinp'>0</div>
+                        <div class = 'dint'>-1</div>
+                    </div>
+                    <div>
+                        s
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class = 'about'>
+                <div>There are 2 columns, the first is the words and another one is its meaning. Just match the words with their correct meanings until time's up. <b>good luck !!!</b></div>
+                <br>
+            </div>
+        </div>
+    </div>
+        <div class = 'footer'>
+            <b>Project: </b>wordMatch;
+            <b>Creator: </b>Khanh Hung;
+            <b>Created date: </b>24/6/24;
+            <b>Publish date: </b>27/6/24;
+            <b>Last modified date: </b>27/6/24;
+        </div>
+
+
+
+        <div id = 'alter'></div>
+        <div class = 'sound'>
+            <audio id = 'audio1' src = 'rightans.mp3'></audio>
+        </div>
+        <div class = 'congr'>
+            <img id = 'congrgif'>
+        </div>
+        <div id = 'bg'></div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src = 'main.js'></script>
+    </body>
+</html>

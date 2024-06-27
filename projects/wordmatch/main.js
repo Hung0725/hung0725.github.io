@@ -36,7 +36,7 @@ function set(){
 
     var word = splitword[Math.floor(Math.random() * (splitword.length-1))].split('-');
     while(findpair(word[0])) word = splitword[Math.floor(Math.random() * (splitword.length-1))].split('-');
-    console.log(word);
+   
 
     var rnd = Math.floor(Math.random() * MAX);
     while(btn1[rnd].value != 0){
@@ -96,8 +96,8 @@ var ch = 0;
 var r = 0, w = 0;
 
 // game audio
-var ping = new Audio("rightans.mp3"),
-    wing = new Audio('win.mp3');
+
+var wing = new Audio('win.mp3');
 
 
 var chvalue = [], btnval = [];
@@ -108,8 +108,7 @@ function tg(ind, val, id){
     if(ch >= 2){
         if(chvalue[1] == undefined || chvalue[3] == undefined) return;
         if(splitword[findword(chvalue[1])].split('-')[2] == chvalue[3]){
-            ping.play();
-            console.log(1);
+           
             r++; // right times
             choose(alter, 1);
             choose(alter, 2);
@@ -134,7 +133,6 @@ function tg(ind, val, id){
             // wrong data
             if(wrongfile.indexOf(splitword[findword(chvalue[1])].split('-')[0]) == -1 || wrongfile.indexOf(chvalue[3]) == -1) wrongfile += splitword[findword(chvalue[1])].split('-')[0] + '-' + chvalue[3] + '/';
             w++; // wrong times
-            console.log(0);
             choose(alter, 1);
             choose(alter, 2);
             btn1[btnval[1]].classList.add('inc');
@@ -324,12 +322,10 @@ function showtable(){
 var mininp = document.getElementById('mininp'),
     secinp = document.getElementById('secinp');
 var rect = mininp.getBoundingClientRect();
-    console.log(rect.top, rect.right, rect.bottom, rect.left);
 
 var tint = document.getElementsByClassName('tint'),
     dint = document.getElementsByClassName('dint');
 mininp.onmousedown = function(){
-    console.log('md1');
     var prev = 0;
     document.body.onmousemove = function(e){
     if(Math.abs(e.clientY - rect.top) >= 50){
@@ -353,7 +349,7 @@ mininp.onmousedown = function(){
 }
 }
 secinp.onmousedown = function(){
-    console.log('md1');
+    
     var prev = 0;
     document.body.onmousemove = function(e){
     if(Math.abs(e.clientY - rect.top) >= 50){

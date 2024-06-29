@@ -42,7 +42,7 @@ function check(val){
     for(var i = 0; i < words.length; i++){
         if(words[i].innerText == val){
             notify("You have added this word before!" + ' #' + (i + 1));
-            return false;
+            return true;
         }
     } 
 }
@@ -55,7 +55,7 @@ function addWord(){
         notify('Input field(s) missing!')
         return;
     }
-    if(!check(wordInp.value)) return;
+    if(check(wordInp.value)) return;
     var x = document.createElement('tr'),
         stt = document.createElement('td'),
         word = document.createElement('td'),

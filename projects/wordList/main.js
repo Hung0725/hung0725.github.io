@@ -55,7 +55,7 @@ function addWord(){
         notify('Input field(s) missing!')
         return;
     }
-    if(check(wordInp.value)) return;
+    if(!check(wordInp.value)) return;
     var x = document.createElement('tr'),
         stt = document.createElement('td'),
         word = document.createElement('td'),

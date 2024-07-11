@@ -2,7 +2,8 @@
 if(localStorage.getItem('answerfile') != null || localStorage.getItem('answerfile') == ''){
     var content = localStorage.getItem('answerfile');
 } else {
-    document.getElementsByClassName('starter')[0].style.display = 'block';
+    document.getElementsByClassName('starter')[0].style.display = 'flex';
+    var content = '';
 }
 var choices = document.querySelectorAll('.choice button'),
     word = document.getElementsByClassName('word')[0];
@@ -16,6 +17,7 @@ var al = document.getElementById('amount'),
 var temp = '';
 
 function loadg(){
+    if(content == '') return;
     if(els.length <= 6){
         document.getElementsByClassName('summ')[0].style.display = 'flex';
         return;
@@ -79,6 +81,18 @@ document.getElementById('inp')
                 fr.readAsText(this.files[0]);
             });
 
+ document.getElementById('ster')
+            .addEventListener('change', function () {
+
+                let fr = new FileReader();
+                fr.onload = function () {
+                    gcnt = fr.result;
+                    localStorage.setItem('answerfile', gcnt);
+                    location.reload();
+                }
+
+                fr.readAsText(this.files[0]);
+            });
             // notify
 function nof(text){
     var x = document.createElement('div');

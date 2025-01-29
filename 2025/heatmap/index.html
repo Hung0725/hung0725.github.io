@@ -1,3 +1,6 @@
+<!-- Add sync button ---- just use fetchJSON() for it-->
+<!-- Next project is realtime chat, that would be amazing!!!-->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,7 +27,12 @@
 
        <button class = 'black' onclick = 'closeWindow(inp); closeWindow(newS)'></button>
        
-       <div class = 'new'>
+
+        <div style = 'display:flex; align-items:center;' class = 'm-3 mt-1 mb-4'>
+            <button class ='btn btn-primary' style = 'display:flex; justify-content:center; align-items:center; width:35px; height:35px;' onclick = 'fetchJSON()'><span class = 'material-symbols-outlined'>sync</span></button>
+            <span style ='display:flex; align-items:center;' class = 'm-2 fw-bold text-primary'>Sync now if you edited on other platforms!</span>
+        </div>
+        <div class = 'new'>
             <div style = 'background:#ddd; text-align:center'>
                 Create New Session
             </div>

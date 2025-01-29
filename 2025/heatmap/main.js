@@ -139,6 +139,8 @@ function editVal(day){
     btnbl.style.display = 'block';
     
     inp.value =  day;
+    inps[0].value = parseInt(data[session][Y][day]);
+    
     inp.children[0].children[0].innerHTML = '<span>Edit</span> ' + getDateFromDay(Y, parseInt(day) + 1);
 }
 

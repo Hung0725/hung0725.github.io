@@ -369,7 +369,7 @@ async function fetchJSON() {
 
 const gistId = "b5e054f2974d10228bc88038eefc75ee"; // Replace with your Gist ID
 const fileName = "data.json"; // Replace with your JSON file name
-const token = "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"; // Replace with your GitHub token
+const token = "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"; // Replace with your GitHub token
 
 async function updateJSON() {
   const response = await fetch(`https://api.github.com/gists/${gistId}`, {

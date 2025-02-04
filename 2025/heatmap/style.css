@@ -1,0 +1,153 @@
+*{
+    padding:0;
+    margin:0;
+    user-select:none;
+}
+.heatmap-display{
+    display:grid;  
+    grid-auto-flow:column;
+    grid-template-rows:repeat(7, 12px);
+    grid-gap:1px;
+    width:min-content;
+    margin:15px;
+    padding:5px;
+    overflow:auto;
+    margin-top:0;
+    padding-top:1px;
+}
+.heatmap-display div{
+    display:inline-block;
+    font-size:10px;
+    height:12px;
+    width:12px;
+    background:#ddd;
+    border-radius:2px;
+}
+.heatmap-display div:hover{
+    outline:1px solid black;
+}
+.inp{
+    position:fixed;
+    background:white;
+    width:250px;
+    height:250px;
+    border:1px solid gray;
+    box-shadow:5px 2px 10px rgba(0,0,0,.3);
+    left:calc(50% - 125px);
+    top:20px;
+    transform:scale(0);
+    opacity:0;
+    transition:all 0.2s ease-in-out;
+    z-index:1000000000;
+}
+.inp button{
+    width:100%;
+    margin:5px 0;
+}
+.inp button.close{
+    width:min-content;
+    border:none;
+    border-radius:5px;
+    display:flex;
+    justify-content:right;
+    align-items:center;
+    margin:0;
+}
+.inp .title{
+    text-align:center;
+    font-size:15px;
+    margin:5px 0;
+}
+.inp .title span{
+    font-weight:normal;
+}
+
+.black{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,.3);
+    z-index:500000;
+    border:none;
+    display:none;
+}
+.new{
+    position:fixed;
+    width:300px;
+    height:200px;
+    background:white;
+    border:1px solid gray;
+    left:calc(50% - 150px);
+    top:50px;
+    transition:all 0.2s ease-in-out;
+    z-index:1000000000;
+    transform:scale(0);
+    opacity:0;
+}
+.new button{
+    margin:3px;
+}
+.show{
+    transform:scale(1);
+    opacity:1;
+}
+.control{
+    display:flex;
+    justify-content:center;
+
+}
+.control button{
+    width:40px;
+    height:40px;
+    background:#f1f1f1;
+    border:none;
+    margin:5px;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#3d3d3d;
+}
+.control button:hover{
+    background:#ddd;
+}
+.control button span{
+    text-align:center;
+}
+.sessions{
+    display:grid;
+    border:2px solid gray;
+}
+.sessions button{
+    border:none;
+    background:white;
+    border-bottom:1px solid #adadad;
+    padding:5px;
+    text-align:left;
+}
+.sessions button:hover{
+    background:#f5f5f5;
+}
+button.focusBtn{
+    background:#ddd !important;
+}
+.currentDate{
+    border:1.5px solid gray;
+}
+.ord{
+    display:grid;  
+    grid-auto-flow:column;
+    grid-template-columns:repeat(53, 12px);
+    grid-gap:1px;
+    width:min-content;
+    margin:15px 15px 0 15px;
+    padding:5px 5px 0 5px;
+    overflow:auto;
+}
+.ord div{
+    display:inline-block;
+    font-size:9px;
+    color:gray;
+}

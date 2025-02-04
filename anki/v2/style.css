@@ -1,0 +1,345 @@
+*{
+    padding:0;
+    margin:0;
+    user-select:none;
+}
+
+html, body{
+    scroll-behavior:smooth !important;
+}
+
+::selection{
+    background:var(--green);
+    color:white;
+}
+:root{
+    --green:rgba(72, 133, 111,1);
+}
+.container{
+    /* border:1px solid gray; */
+}
+
+.st{
+    background:rgba(170,170,170,.15);
+}
+.window{
+   /*  border:1px solid gray; */
+   min-height:calc(100vh - 80px);
+}
+.body{
+   
+}
+.heading-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.menu-btn{
+    padding:10px;
+    width:45px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:Center;
+    border:none;
+    background:none;
+}
+.menu-btn span{
+    font-size:30px;
+}
+.sidebar{
+    position:fixed;
+    right:-240px;
+    top:0;
+    height:100vh;
+    width:240px;
+    padding-top:20px;
+    background:white;
+    z-index:999;
+    transition:right 500ms ease-in-out;
+    background:rgba(72, 133, 111,1);
+}
+.ft-btn{
+    display:flex;
+    flex-direction:column;
+}
+.ft-btn button{
+    background:none;
+    border:none;
+    padding:10px;
+    color:rgba(255,255,255,.8);
+    border-color:rgba(255,255,255,.3) !important;
+}
+.ft-btn button:hover{
+    background:rgba(255,255,255,.1);
+}
+.closebtn{
+    width:45px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:Center;
+    border:none;
+    background:none;
+}
+.closebtn span{
+    font-size:40px;
+}
+.main-body{
+   transition:transform 500ms ease-in-out; 
+}
+.appear{
+    right:0;
+}
+.push-body{
+    transform:translateX(-240px);
+}
+
+.black{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    z-index:100;
+    background:rgba(0,0,0,.1);
+    border:none;
+}
+.black{
+    visibility:hidden;
+    background:none;
+}
+.bl{
+    visibility:visible;
+}
+
+.rs{
+    position:relative;
+    margin-bottom:50px;
+    padding:10px 0;
+    border:1px dashed gray;
+}
+.rs:before{
+    content:'Code';
+    position:absolute;
+    top:-30px;
+    right:-1px;
+    left:-1px;
+    background:var(--green);
+    height:30px;
+    border:1px solid rgba(0,0,0,.5);
+    border-bottom:none;
+    text-align:Center;
+    color:rgba(255,255,255,.5);
+}
+.rs:nth-child(1) p{
+    padding:0 10px;
+}
+.rs p{
+    position:relative;
+    z-index:1;
+}
+.rs p:before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(150,150,150,.15);
+    display:none;
+    z-index:-1;
+}
+.rs p:hover:before{
+    display:block;
+}
+.rs:nth-child(1) p{
+    
+}
+.rs p:hover, .rs:nth-child(1) p:focus{
+
+}
+.rs:nth-child(2):before{
+    content:'Preview'
+}
+/* .alt{
+    margin:0 auto;
+    position:fixed;
+    bottom:10px;
+    left:10px;
+    opacity:1;
+    z-index:1000;
+    background:white;
+}
+.alt div{
+    background:white;
+} */
+
+.alt{
+    margin:0 auto;
+}
+
+.input .ans-inp{
+   margin: 10px 0;
+
+}
+input{
+    opacity:0.95;
+}
+.input .ans-inp input{
+    padding-left:20px;
+}
+.input .form-floating input{
+   font-weight:bold;
+   font-size:17px;
+   margin-bottom:30px;
+   padding-left:20px;
+}
+
+.input{
+    padding:20px;
+    border-radius:20px;
+    background:rgba(170,170,170,.15);
+}
+.cnt-radio{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    width:37.6px;
+    background:#f1f1f1;
+    border:none;
+    border-left:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.cnt-radio span{
+    color:rgba(0,0,0,.5);
+}
+.cnt-radio:hover span{
+    color:black;
+}
+.cnt-radio:hover{
+    background:#e7e7e7;
+}
+.cnt-radio:before{
+    font-family: "Material Icons";
+    content: "done";
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    background:var(--green);
+    width:38.6px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    z-index:100;
+    transform:scale(0);
+    transition:border-color 500ms;
+}
+.cnt-radio:hover:before{
+    border:5px solid rgba(255,255,255,.2);
+}
+.input-group-text input[type=radio]:checked ~ .cnt-radio:before{
+   transform:scale(1);
+   animation:check 300ms;
+}
+@keyframes check{
+    0%, 100%{
+        transform:scale(1);
+    }
+    0%{
+        border-radius:30px;
+    }
+    100%{
+        border-radius:0px;
+    }
+    70%{
+        transform:scale(1.1);
+    }
+    90%{
+        transform:scale(1);
+    }
+}
+
+.custom-checkbox{
+    width:45px;
+    height:25px;
+    background:white;
+    border-radius:50px;
+    position:relative;
+}
+.custom-checkbox:hover{
+    background:#f5f5f5;
+}
+.custom-checkbox:before{
+    content:'';
+    position:absolute;
+    background:rgb(171, 171, 171);
+    left:3px;
+    top:3px;
+    bottom:3px;
+    width:19px; /* checkbox height - 6px */
+    border-radius:50px;
+    transition:background 300ms, left 300ms;
+}
+.custom-inp{
+    display:none;
+}
+.custom-inp:checked ~ .custom-checkbox:before{
+    left:21px;
+    background:var(--green);
+}
+.custom-label{
+
+}
+.settings{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid rgba(255,255,255,.4);
+    padding:10px;
+}
+.settings:nth-child(1){
+    border-top:2px solid rgba(255,255,255,.4);
+}
+.settings p{
+    color:rgba(255,255,255,.8);
+}
+
+.word{
+    border-radius:5px 0 0 5px !important;
+    font-size:17px !important;
+}
+
+
+/* dark mode */
+
+input.dark-inp{
+    background:rgba(255,255,255,.1) !important;
+    color:rgba(255,255,255,.85) !important;
+    border: 1px solid rgba(150,150,150,.4) !important;
+}
+ select.dark-inp{
+    background:rgba(255,255,255,.1) !important;
+    color:rgba(200,200,200,1);
+    border:1px solid rgba(150,150,150,.4) !important;
+} 
+input.dark-inp:focus{
+    outline:5px solid rgba(255,255,255,.4) !important;
+}
+.heading-container.dark-cnt{
+    background:rgba(255,255,255,.1);
+    background:rgba(255,255,255,.95);
+}
+.heading-container.dark-cnt p{
+    font-weight:bold !important;
+}
+.dark-preview{
+    background:rgb(21, 21, 21);
+}

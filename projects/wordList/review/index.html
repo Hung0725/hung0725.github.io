@@ -1,0 +1,84 @@
+<!-- HTML 10/7/2024 by Hung -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+<title>Review</title>
+<link rel = 'stylesheet' href = 'style.css'>
+<meta name = 'viewport' content = 'width=device-width, initial-scale = 1'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<!-- pixel font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<!-- noto font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 40
+    }
+    </style> 
+</head>
+    <body>
+        <br>
+        <div class = 'nav'>
+            <label>
+                <input type = 'file' id = 'inp' hidden = 'true'>
+                <div>Choose file</div>
+            </label>
+        </div>
+        <div class = 'stat'>
+            <div id = 'amount'>1/</div>
+            <div class = 'cont'>
+                <div id = 'cor'>0</div>
+                <div class = 'inc'>0</div>
+            </div>
+        </div>
+        <div class = 'main'>
+            <div class = 'content'>
+                <div class = 'word'></div>
+                <div class = 'choice'>
+                    <button onclick = 'chose(0, this.innerHTML)'></button>
+                    <button onclick = 'chose(1, this.innerHTML)'></button>
+                    <button onclick = 'chose(2, this.innerHTML)'></button>
+                    <button onclick = 'chose(3, this.innerHTML)'></button>
+                    <button onclick = 'chose(4, this.innerHTML)'></button>
+                </div>
+            </div>
+        </div>
+        <div class = 'history'>
+            <div id = 'h-content'>
+
+            </div>
+        </div>
+        <div class = 'embed sw'>
+            <button onclick = 'sw(); this.firstChild.classList.toggle("rotate")'><span id = 'ar' class="material-symbols-outlined">keyboard_arrow_up</span></button>
+            <iframe id = 'frame' src = 'https://takoboto.jp/?q='></iframe>
+        </div>
+        <div class = 'summ' style = 'display:none'>
+            <div>
+                <div>Congratulation!</div>
+                <div>You answer all the questions!</div>
+            </div>
+        </div>
+
+        <div class = 'starter' style = 'display:none'>
+            <div id = 'container'>
+            <div>Please import a suitable file!</div>
+            <div class = 'st'>
+                <label>
+                    <input type = 'file' id = 'ster' hidden = 'true'>
+                    <div>Choose file</div>
+                </label>
+            </div>
+            </div>
+        </div>
+        <script src = 'main.js'></script>
+    </body>
+</html>

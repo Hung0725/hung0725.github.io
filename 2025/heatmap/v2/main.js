@@ -250,15 +250,17 @@ function sav(ID, val){
     const tooltip = new bootstrap.Tooltip(em); 
     
     // set color for square
-    var cr = Math.floor(val / 100);
-    if(cr >= color[colorOpt].length - 2) cr = color[colorOpt].length - 2;
+    if(!(val == 0 || val == undefined || val == NaN)){
 
-    em.style.background = color[colorOpt][cr];
-    //em.style.opacity = inps[0].value / 255;
+        var cr = Math.floor(val / 100);
+        if(cr >= color[colorOpt].length - 2) cr = color[colorOpt].length - 2;
+        em.style.background = color[colorOpt][cr];
+        //em.style.opacity = inps[0].value / 255;
     
+    }
     localStorage.setItem('edata', JSON.stringify(data));
     if(saved){
-        updateJSON();
+        //updateJSON();
         
     }
 }
@@ -300,7 +302,7 @@ focusBtn(sessions.children[0]);
 
 
 // JSON
-/* async function fetchJSON() {
+async function fetchJSON() {
     const binId = "679a209bad19ca34f8f65f66"; // Replace with your Bin ID
     const response = await fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
         headers: { "X-Master-Key": "$2a$10$aEIMG0yIDIgOHCp12erNru1fdKqdB1zJArI1TfUMUraONeYgas/p2" }
@@ -331,7 +333,7 @@ async function updateJSON() {
 
     const jdata = await response.json();
     alert("Uploaded succcessfully!")
-}*/
+}
 
 
 
@@ -341,7 +343,7 @@ async function updateJSON() {
 
 
 
-
+/*
 
 async function fetchJSON() {
     const gistId = "b5e054f2974d10228bc88038eefc75ee"; // Replace with your actual Gist ID
@@ -369,7 +371,7 @@ async function fetchJSON() {
 
 const gistId = "b5e054f2974d10228bc88038eefc75ee"; // Replace with your Gist ID
 const fileName = "data.json"; // Replace with your JSON file name
-const token = "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"; // Replace with your GitHub token
+const token = "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"; // Replace with your GitHub token
 
 async function updateJSON() {
   const response = await fetch(`https://api.github.com/gists/${gistId}`, {
@@ -397,7 +399,7 @@ async function updateJSON() {
 
 
 
-
+*/
 
 
 

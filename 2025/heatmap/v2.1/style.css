@@ -179,7 +179,7 @@ button.focusBtn{
     background:#ececec !important;
 }
 .currentDate{
-    border:1.5px solid gray;
+    border:1.5px solid rgba(125,125,125,.5);
     position:relative;
 }
 /*.currentDate:after{
@@ -421,7 +421,4 @@ body.dark .fn{
 }
 body.dark .heatmap-display div.edible{
     background:rgb(27, 27, 27);
-}
-.body.dark .heatmap-display div.currentDate{
-    border:1.5px solid #ddd;
 }

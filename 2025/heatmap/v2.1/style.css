@@ -422,3 +422,6 @@ body.dark .fn{
 body.dark .heatmap-display div.edible{
     background:rgb(27, 27, 27);
 }
+body.dark .close span{
+    text-color:black;   
+}

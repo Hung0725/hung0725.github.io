@@ -82,7 +82,7 @@ function progress(el, ptg){
     el.appendChild(container);
 }
 
-ptg = 0.3;
+//ptg = 0.3;
 
 
 // background

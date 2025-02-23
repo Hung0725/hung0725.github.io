@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<meta name = 'viewport' content = 'width=device-width, initial-scale=1'>
+<title>HOME</title>
+<link rel = 'stylesheet' href = 'style.css'>
+
+    </head>
+    <body>
+
+        
+
+        <div class = 'menu-bar'>
+            <span>Home Page</span>
+        </div>
+
+      
+
+
+        <div class = 'main'>
+        <div class = 'time'>
+            <div class = 'clock'></div>
+            <div class = 'clockptg'></div>
+            <div></div>
+        </div>
+        <div class = 'date'>
+            <div class = 'date-display'></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class = 'year'>
+            <div></div>
+        </div>
+       </div>
+
+       <div class = 'weather'>
+            <div>
+                <div></div>
+                <div></div>
+            </div>
+            <div></div>
+            <div></div>
+            <div>
+                <img id = 'wicon'>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+            <button onclick = 'getlocation()'>Current location</button>
+       </div>
+       <div>
+            <div>Custom location</div>
+            <div>
+                <input value = '12.847013' placeholder = 'Langitude..' type = 'number' id = 'longitude'>
+                <input value = '107.984154' placeholder = 'Longitude..' type = 'number' id = 'langitude'>
+                <button onclick = 'getweather(this.parentElement.children[0].value, this.parentElement.children[1].value)'>OK</button>
+            </div>
+       </div>
+
+
+
+       <div class = 'music'>
+        <div>
+            <audio id = 'pl'></audio>
+        </div>
+            <div class = 'player'>
+                <div>
+                    <span id = 'title'></span>
+                    <div>
+                        <span class = 'crt'>0</span>
+                        <input id = 'ts' type = 'range' min = '0' max = '100' value = '0'>
+                        <span class = 'mxt'></span>
+                    </div>
+                </div>
+                <div></div>
+                <div>
+                    <button onclick = 'rndsong()'>Random</button>
+                    <button onclick = "psong(0)">Previous</button>
+                    <button onclick = 'padd(-10)'>-10s</button>
+                    <button onclick = "pp()">Play/pause</button>
+                    <button onclick = 'padd(10)'>+10s</button>
+                    <button onclick = "psong(1)">Next</button>
+                    <button onclick = 'ad.loop = !ad.loop; this.classList.toggle("lp")'>Loop</button>
+                </div>
+            </div>
+            <div class = 'music-list'></div>
+       </div>
+        <!-- <script src = 'jquery-3.7.1.min.js'></script> -->
+         <script src = 'music.js'></script>
+        <script src = 'main.js'></script>
+    </body>
+</html>

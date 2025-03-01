@@ -3,6 +3,7 @@
     margin:0;
     user-select:none;
     color-scheme:dark;
+    font-family:arial, self-serif;
 }
 
 button:active{

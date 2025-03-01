@@ -1,7 +1,8 @@
 const songs = [
     'cappie.mp3',
     'miside_menu.mp3',
-    'sleepy_mita.mp3'
+    'sleepy_mita.mp3',
+    'fukashigi_no_carte_piano.mp3'
 ]
 
 

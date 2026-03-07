@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = 'stylesheet' href = 'style.css'>
+</head>
+<body>
+    <br>
+    <div class = 'main'>
+        <div class = 'control'>
+            <label>
+                <select id = 'methods'>
+                    <option value = '0'>bubble sort</option>
+                    <option selected value = '1'>selection sort</option>
+                </select>
+            </label>
+            <button onclick = 'rnd()'>Random array</button>
+        </div>
+        <div class = 'nav'>
+            <button onclick = 'cont()'>&gt;</button>
+            <button id = 'auto' onclick = 'autoclick(200)'>Auto</button>
+            <button id = 'stop' onclick = 'stopauto()'>Stop</button>
+        </div>
+        <div class = 'vars'>
+            <div class = 'var-list'></div>
+        </div>
+        <div class = 'inf'>
+            <div id = 'alt'></div>
+        </div>
+        <div class = 'array-container'>
+            <div class = 'array-ind'></div>
+            <div class = 'array'></div>
+        </div>
+    </div>
+    <script src = 'main.js'></script>
+</body>
+</html>

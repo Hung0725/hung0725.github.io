@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Timer</title>
+    <link rel = 'stylesheet' href = 'style.css'>
+</head>
+<body>
+    <div class = 'menu'>
+        <b>Custom Timer</b>
+    </div>
+    <button id = 'black' onclick = 'cltab()'></button>
+    <div class = 'alt'>
+        <div class = 'alt-title'>Alert!</div>
+        <div class = 'alt-content'>
+            <div>Do you really want to set/reset the timer?</div>
+            <div class = 'btns'>
+                <button onclick = 'cltab()'> Cancel</button>
+                <button id = 'fn' onclick = ''> Yes</button>
+            </div>
+        </div>
+    </div>
+    <div class= 'widget-container'>
+    <div class = 'main'>
+        <div id = 'container'>
+        <div style = 'display:flex; justify-content:center;'>
+        <div class = 'clock'>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        </div>
+        <div style = 'margin:10px 0;'>
+        <div style = 'border-top:1px solid #ddd; border-bottom:1px solid #ddd;padding:8px 0;'>
+        <div class = 'mark'>
+            <div id = 'timemark'></div>
+        </div>
+        <div class = 'inp'>
+            <b>Set Date: </b>
+            <input id = 'date' type = 'date'>
+            <input id = 'time' type = 'time'>
+            <button onclick = 'showtab(0, 1)'>set</button>
+        </div>
+        </div>
+        </div>
+
+        <div class = 'milestone'>
+        <div><b>Milestone: </b></div>
+        <div id = 'inf'>
+            <b><span id ='cr'></span></b> of <b><span id = 'tl'></span></b> days achieved
+        </div>
+        <div class = 'bar'>
+            <div id = 'progress'></div>
+        </div>
+    </div>
+        </div>
+    </div>
+    
+    <div class = 'st-cal'>
+        <div  class = 'ctn'>
+        <div>
+            <div class = 'calnav'>
+                <button onclick = 'cge(0)'>Previous</button>
+                <div id = 'dpl'>
+                    Calendar
+                </div>
+                <button onclick = 'cge(1)'>Next</button>
+
+            </div>
+        </div>
+        <div>
+        <div class = 'calbar'>
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class = 'calendar'>
+
+        </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src = 'main.js'></script>
+ 
+</body>
+</html>

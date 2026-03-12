@@ -1,0 +1,1 @@
+vector file for logo

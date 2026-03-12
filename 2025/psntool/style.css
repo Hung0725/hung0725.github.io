@@ -1,0 +1,133 @@
+*{
+    padding:0;
+    margin:0;
+    font-family:monospace;
+}
+body{
+    padding:20px;
+}
+.list{
+    max-height:400px;
+    overflow:auto;
+    border:1px solid gray;
+    width:fit-content;
+}
+#t-list{
+    font-size:14px;
+    max-height:400px;
+    overflow:hidden;
+    border-collapse:collapse;
+}
+#t-list tr{
+    border-bottom:1px solid transparent;
+}
+#t-list tr td{
+    border:none;
+    padding:0 3px;
+}
+#t-list tr td:nth-child(1){
+    color:gray;
+}
+#t-list tr:nth-child(even){
+    background:#f1f1f1;
+}
+#t-list tr:hover{
+    background:#ddd;
+    border-color:rgb(172, 172, 172);
+}
+.edmark{
+    border-color:green !important;
+    background:rgb(192, 255, 216) !important;
+}
+.findline{
+    background:rgb(255, 255, 148) !important;
+    border-color: rgb(212, 212, 22) !important;
+}
+.dup{
+    background:rgb(255, 198, 198) !important;
+    border-color:rgb(212, 126, 126) !important;
+}
+#dl{
+    border-collapse:collapse;
+    border:1px solid gray;
+}
+#dl tr{
+    font-size:14px;
+}
+#dl td{
+    padding:2px 7px;
+}
+#dl tr:nth-child(even){
+    background:#f1f1f1;
+}
+.tle{
+    background:rgb(160, 217, 255);
+}
+#text-inp{
+    width:150px;
+    height:100px;
+    resize:none;
+    opacity:0.5;
+}
+#text-inp:focus{
+    width:300px;
+    height:200px;
+    opacity:1;
+}
+.inp{
+    display:flex;
+    margin:10px 0;
+    gap:5px;
+}
+.inp button{
+    height:50px;
+}
+.ctn{
+    width:min-content;
+}
+.ctn2{
+    
+}
+.main{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+#dl{
+    margin:10px 0;
+}
+#nof{
+    padding:5px 0;
+}
+#output{
+    background:#f1f1f1;
+    padding:5px 10px;
+    max-height:400px;
+    overflow:auto;
+    border:1px solid rgb(189, 189, 189);
+}
+#find-line{
+    
+}
+.tb-bar{
+    box-shadow:2px 2px 10px rgba(150,150,150,.5);
+}
+.tb-bar:hover, .tb-bar:focus{
+    opacity:1;
+}
+button{
+    padding:5px 10px;
+    border:1px solid gray;
+}
+input{
+    padding:5px 10px;
+}
+.eff{
+    outline:3px solid rgb(105, 218, 105);
+    background:rgb(223, 255, 223);
+    border-color:transparent;
+}
+.clz{
+    background:rgb(194, 232, 255) !important;
+    border:none !important;
+}

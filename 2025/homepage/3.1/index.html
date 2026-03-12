@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<meta name = 'viewport' content = 'width=device-width, initial-scale=1'>
+<title>HOME</title>
+<link rel = 'stylesheet' href = 'style.css'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel ='stylesheet' href = 'res.css'>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+</style>
+
+    </head>
+    <body>
+
+        
+
+        <div class = 'menu-bar'>
+            <span>Home Page</span>
+        </div>
+
+      
+
+<div class = 'main-container'>
+
+        <div class = 'main'>
+        <div class = 'time'>
+            <div class = 'clock'></div>
+            <div class = 'clockptg'></div>
+            <div></div>
+            <div id = wk></div>
+            
+        </div>
+        <div class = 'date'>
+            <div class = 'date-display'></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class = 'year'>
+                <div></div>
+            </div>
+        </div>
+        
+       </div>
+
+
+
+
+
+       <div class = 'music'>
+        <div>
+            <audio id = 'pl'></audio>
+        </div>
+            <div class = 'player'>
+                <div class = 'prog'>
+                    <span id = 'title'></span>
+                    <div>
+                        <span class = 'crt'>0</span>
+                        <input id = 'ts' type = 'range' min = '0' max = '100' value = '0'>
+                        <span class = 'mxt'></span>
+                    </div>
+                </div>
+                <div></div>
+                <div class = 'btns'>
+                    <button onclick = 'rndsong()'><span class="material-symbols-outlined">shuffle</span></button>
+                    <button onclick = "psong(0)"><span class="material-symbols-outlined">skip_previous</span></button>
+                    <button onclick = 'padd(-10)'><span class="material-symbols-outlined">replay_10</span></button>
+                    <button onclick = "pp()" id = 'plbtn'><span class="material-symbols-outlined">play_arrow</span></button>
+                    <button onclick = 'padd(10)'><span class="material-symbols-outlined">forward_10</span></button>
+                    <button onclick = "psong(1)"><span class="material-symbols-outlined">skip_next</span></button>
+                    <button onclick = 'ad.loop = !ad.loop; this.classList.toggle("lp")'><span class="material-symbols-outlined">repeat_one</span></button>
+                </div>
+            </div>
+            <div class = 'music-list'></div>
+       </div>
+
+
+
+
+
+
+       <div class = 'weather'>
+            <div class = 'cord'>
+                <div></div>
+                <div></div>
+            </div>
+            <div div class = 'loc'></div>
+            <div div class = 'stime'></div>
+            <div class = 'wcon'>
+                <img id = 'wicon'>
+                <div class = 'grid-cnt'>
+                    <div id = 'tmp'></div>
+                    <div id = 'cnd' class ='cond'></div>
+                </div>
+            </div>
+
+            <div class = 'inf-cnt'>
+                <div id = 'wnd' class ='wind c'></div>
+                <div class = 'inf'>
+                    <div class ='c thermal a'></div>
+                    <div class ='humid c a'></div>
+                    <div class ='cloud c a'></div>
+                    <div class ='visib c a'></div>
+                </div>
+            </div>
+            <div class = 'gweather'>
+                <button id = 'gbtn' onclick = 'getlocation()'><span class = 'btn-tle'>Current location</span><span>using GPS</span></button>
+                <div class = 'custom-loc'>
+                    <div class = 'c-container'>
+                        <input value = '12.847013' placeholder = 'Langitude..' type = 'number' id = 'longitude'>
+                        <input value = '107.984154' placeholder = 'Longitude..' type = 'number' id = 'langitude'>
+                    </div>
+                    <button onclick = 'getweather(this.parentElement.children[0].children[0].value, this.parentElement.children[0].children[1].value)'>GET</button>
+                </div>
+            </div>
+        </div>
+</div>     
+
+
+
+       
+        <!-- <script src = 'jquery-3.7.1.min.js'></script> -->
+         <script src = 'music.js'></script>
+        <script src = 'main.js'></script>
+    </body>
+</html>

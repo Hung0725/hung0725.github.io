@@ -1,0 +1,48 @@
+*{
+    padding:0;
+    margin:0;
+    user-select:none;
+}
+body{
+    overflow:hidden;
+}
+.progress{
+    height:10px;
+    width:200px;
+    background:#003c77;
+}
+.progress div{
+    background:rgb(13, 169, 231);
+    height:100%;
+}
+.date-display{
+    font-size:20px;
+    text-align:center;
+}
+.clock{
+    font-size:20px;
+    font-weight:550;
+    text-align:center;
+}
+.menu-bar{
+    background:rgb(54, 54, 54);
+    background:linear-gradient(rgb(54, 54, 54), rgb(54, 54, 54), rgb(44, 44, 44));
+    color:gray;
+    text-align:center;
+}
+
+.main{
+    background:rgba(0,0,0,.5);
+    color:white;
+    width:min-content;
+}
+
+body{
+    background:rgb(26, 26, 26);
+    color:white;
+}
+
+
+.lp{
+    background:green;
+}

@@ -1,0 +1,331 @@
+*{
+    padding:0;
+    margin:0;
+    user-select:none;
+    color-scheme:dark;
+    font-family:arial, self-serif;
+}
+
+button:active{
+    opacity:0.7;
+}
+.progress{
+    height:10px;
+    width:290px;
+    background:#003c77;
+}
+.progress div{
+    background:rgb(13, 169, 231);
+    height:100%;
+}
+.date div i, .clockptg i, #wk i{
+    color:gray;
+    font-style:normal;
+    font-size:14px;
+}
+.date-display{
+    font-size:20px;
+    font-weight:bold;
+    border-bottom:1px solid rgba(150,150,150,.4);
+    margin-bottom:10px;
+}
+
+.clock{
+    font-size:20px;
+    font-weight:550;
+    border-bottom:1px solid rgba(150,150,150,.4);
+    margin-bottom:10px;
+}
+.menu-bar{
+    background:rgb(54, 54, 54);
+    color:gray;
+    text-align:center;
+}
+
+.main{
+    background:rgba(0,0,0,.2);
+    color:white;
+    max-width:500px;
+    margin:20px;
+    padding:20px;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+body{
+    background:rgb(46, 46, 46);
+    color:white;
+}
+
+
+
+
+/*custom range input */
+#ts{
+    -webkit-appearance: none;
+    appearance: none;
+    width:250px; 
+    height: 1px; 
+    background: #d3d3d3; 
+    outline: none;
+    -webkit-transition: .2s; 
+    transition: opacity .2s;
+}
+#ts::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px; 
+    height: 15px;
+    background: #ffffff; 
+    cursor: pointer;
+    border-radius:50px;
+    transition:transform 300ms;
+}
+#ts:hover::-webkit-slider-thumb{
+    transform:scale(1.5);
+}
+  
+  #ts::-moz-range-thumb {
+    width: 20px; 
+    height: 20px; 
+    background: #ffffff; 
+    cursor: pointer; 
+  }
+.weather .inf div, .wind, .weather .stime div{
+    background:rgba(0,0,0,.3);
+    background:rgba(100,100,100,.3);
+}
+.weather .inf div:hover, .wind:hover, .weather .stime div:hover{
+    opacity:0.8;
+}
+.weather .inf div:active, .wind:active, .weather .stime div:active{
+    opacity:0.6;
+}
+.weather{
+    padding:20px;
+    background:rgba(0,0,0,.2);
+    margin:20px;
+    border-radius:20px;
+    max-width:500px;
+}
+.weather .cord{
+    display:flex;
+    gap:15px;
+    font-size:14px;
+}
+.weather .cord div{
+    color:gray;
+}
+.weather .cord div b{
+    color:white;
+}
+.weather .loc{
+    text-transform:uppercase;
+    font-size:28px;
+}
+.weather .wcon{
+    display:flex;
+    align-items:center;
+}
+.weather #tmp{
+    font-size:43px;
+}
+.weather #tmp:after{
+    content:"℃";
+    font-size:20px;
+    color:gray;
+}
+.grid-cnt{
+    display:grid;
+}
+.weather #cnd{
+    margin-top:-15px;
+    font-size:14px;
+}
+.weather #cnd::first-letter{
+    text-transform:uppercase;
+}
+.weather .stime{
+    display:flex;
+    gap:5px 7px;
+}
+.weather .stime div{
+    padding:5px;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+}
+.weather .c{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+.tp{
+    color:rgb(255, 140, 46);
+}
+.hm{
+    color:rgb(104, 200, 255);
+}
+.deg{
+    height:5px;
+    width:30px;
+    background:linear-gradient(to right, transparent, rgba(149, 234, 255, 0.267), rgb(48, 179, 255));
+    position:relative;
+}
+.weather .inf{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 7px;
+}
+.weather .inf div{
+    padding:5px;
+    border-radius:10px;
+}
+.wind{
+    width:min-content;
+    border-radius:10px;
+    padding:5px;
+}
+.wind div{
+    display:flex;
+    gap:6px;
+}
+.wind i{
+    color:gray;
+}
+.wind span:nth-child(2){
+    border-left:1px solid rgba(150,150,150,.4);
+    padding-left:7px;
+}
+.inf-cnt{
+    display:flex;
+    gap:5px;
+    align-items:flex-start;
+}
+.weather #gbtn{
+    display:grid;
+    padding:5px;
+    border-radius:10px;
+    background:rgb(0, 110, 161);
+    border:none;
+    color:white;
+}
+.btn-tle{
+    font-size:17px;
+    font-weight:bold;
+}
+.gweather{
+    border-top:1px solid rgba(150,150,150,.4);
+    margin-top:10px;
+    padding-top:10px;
+    display:flex;
+    align-items:flex-start;
+    gap:5px;
+}
+.c-container{
+    display:grid;
+}
+.c-container input{
+    border:none;
+    margin:1px 0;
+    padding:2.7px;
+    border-radius:5px;
+    width:80px;
+    background:rgba(150,150,150, .4);
+}
+.custom-loc{
+    display:flex;
+    gap:5px;
+}
+.custom-loc button{
+    padding:3px;
+    border:none;
+    background:rgb(0, 110, 161);
+    color:white;
+    border-radius:10px;
+    width:35px;
+    font-weight:bold;
+}
+
+.music{
+    background:rgba(0,0,0,.2);
+    margin:20px;
+    padding:20px;
+    border-radius:20px;
+    max-width:500px;
+}
+
+.btns{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    align-items:center;
+}
+.btns button{
+    height:55px;
+    width:55px;
+    border:none;
+    border-radius:50px;
+    background:rgba(100,100,100,.3);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.btns button:nth-child(1), .btns button:nth-last-child(1){
+    height:40px;
+    width:40px;
+}
+.btns button:nth-child(2), .btns button:nth-last-child(2){
+    height:45px;
+    width:45px;
+}
+.btns button:hover{
+    background:rgba(150,150,150,.3);
+}
+.btns button.lp{
+    background:rgba(128, 128, 128, 0.863);
+}
+.player #title{
+    text-align:center;
+    display:block;
+    font-size:20px;
+    margin-bottom:10px;
+}
+.prog div{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin:10px 0;
+}
+.music-list{
+    display:grid;
+    margin:10px;
+    margin-top:20px;
+    padding-top:0;
+    max-height:150px;
+    overflow:auto;
+}
+.music-list button{
+    padding:10px;
+    border:none;
+    background:rgba(100,100,100,.2);
+    color:white;
+    text-align:left;
+    border-bottom:1px solid rgba(120,120,120,.2);
+}
+
+.music-list button:hover{
+    background:rgba(150,150,150,.3);
+}
+button.playing{
+    background:rgb(0, 110, 161) !important;
+    border-bottom:none;
+}

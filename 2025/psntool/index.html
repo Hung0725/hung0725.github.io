@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Tools</title>
+    <link rel = 'stylesheet' href = 'style.css'>
+</head>
+<body>
+    
+    <div class = 'inp'>
+            <textarea id = 'text-inp'></textarea>
+            <button onclick = 'dup()'>IMPORT</button>
+    </div>
+
+    <div class = 'main'>
+        
+
+        <div class = 'ctn'>
+
+        <div class = 'tb-bar'style = 'display:flex; width:100%;'>
+                <input type = 'number' id = 'find-line' placeholder = "Jump to line">
+                <button onclick = 'jumptoline(fl.value)'>FIND</button>
+        </div>
+        <div class = 'list'>
+            
+            <table id = 't-list'></table>
+        </div>
+        </div>
+
+        <div class = 'ctn2'>
+        <div class = 'dup-list'>
+            <button onclick = 'clr()'>Delete duplicates</button>
+            <table id = 'dl'></table>
+        </div>
+        <div class = 'cloze'>
+            <button onclick = 'clz()'>cloze</button>
+            <div id = 'nof'></div>
+            <div id = 'output'></div>
+        </div>
+        </div>
+    </div>
+
+    <script src = 'main.js'></script>
+    
+</body>
+</html>

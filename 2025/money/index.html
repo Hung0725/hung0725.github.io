@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Money</title>
+    <link rel = 'stylesheet' href = 'style.css'>
+</head>
+<body>
+    <button onclick = 'closetab(-1)' id = 'black'></button>
+    <div class = ''>
+        <div class = 'popup'>
+            <div class = 'alt'>Balance change</div>
+            <div class = 'inf'>
+                <div>How much money is it in VND?</div>
+                <div class = 'bl-inp'>
+                    <input placeholder = 'Enter value..'value = '5000' type = 'number' id = 'mn'>
+                    <input type = 'text' id = 'note' placeholder = "Your note here, mandatory..">
+                </div>
+            </div>
+            <div class = 'btns'>
+                <button onclick = 'closetab(0)'>Cancel</button>
+                <button onclick = 'blchange(blc.value, nte.value, 1); closetab(0)'>Submit</button>
+            </div>
+        </div>
+
+        <div class ='popup'>
+            <div class = 'alt'>Alert</div>
+            <div class = 'inf'>
+                <div>This will erase all the data and cookies!</div>
+            </div>
+            <div class ='btns'>
+                <button onclick = 'closetab(1)'>Cancel</button>
+                <button onclick = 'resetbl()'>Reset</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class = 'main'>
+        <div>
+            <h1 style = 'padding:10px'>Money tracker</h1>
+        </div>
+        <div id = 'm'>
+            <div>
+                <div style = 'display:flex; justify-content:space-between; align-items:center; gap:15px; margin:10px 0; padding:10px'>
+                <span id = 'your-balance'>0</span>
+                <div style = 'display:inline-block'>
+                    <button onclick = 'showtab(0)'>Balance change</button>
+                </div>
+                </div>
+
+                <hr>
+
+                <div id = 'hcontainer'>
+                    <div>
+                        <h2>History</h2>
+                    </div>
+                    <div>
+                        <button onclick = 'undobl()'>Undo</button>
+                    </div>
+                    <div class = 'tb-container'>
+                        <table id = 'history'>
+                            <tr id = 'stick'>
+                                <th>Date</th>
+                                <th>Change</th>
+                                <th>Balance</th>
+                                <th>Note</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class = 'cv'>
+        <canvas id = 'canvas' height = '200'></canvas>
+    </div>
+
+                <details class = 'settings'>
+                    <summary><h2 style = 'display:inline-block'>Settings</h2></summary>
+                    <div>
+                        <button onclick = 'showtab(1)'>Factory reset</button>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+   <div>
+    <div class = 'footer'>
+        Jul 15 2025, 19:17
+    </div>
+    <script src = 'main.js'></script>
+
+</body>
+</html>

@@ -39,11 +39,17 @@
     justify-content:center;
     border:1px solid #ddd;
 }
+
 .swap{
     color:red;
 }
 .end{
     color:green;
+}
+#alt i{
+    font-weight:bold;
+    color:green;
+    display:block;
 }
 .var-list{
     display:flex;
@@ -59,4 +65,21 @@
 }
 .t{
     color:green;
+}
+.checked{
+    background:blue;
+}
+.mark-el{
+    position:relative;
+}
+.mark-el:before{
+    content:'';
+    
+    position:absolute;
+    display:block;
+    bottom:0;
+    left:0;
+    height:16%;
+    width:100%;
+    background:red !important;
 }
